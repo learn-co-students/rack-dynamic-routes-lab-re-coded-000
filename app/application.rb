@@ -9,7 +9,7 @@ class Application
     if req.path.match(/items/)
       if @@items.detect{|i| i.name==item_name}
 
-        price=i.price
+        price=find_item(item_name).price
         resp.write(price)
         resp.status=200
       else
